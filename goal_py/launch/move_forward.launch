@@ -1,0 +1,4 @@
+<launch>
+    <rosparam file="$(find goal_py)/config/goals.yaml" command="load" ns="rover"/>
+    <node pkg="goal_py" type="ileri_v2_sub_pub.py" name="forward" output="screen"/>
+</launch>

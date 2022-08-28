@@ -1,0 +1,27 @@
+<robot name="robot">
+<!-- 
+@author: Baran Berk Bagci-->
+
+<!-- Marsyard grid urdf this is marsyard surface -->
+  <link name="marsyard_Grid_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -1.5" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -1.5" />
+      <geometry>
+        <mesh filename="package://marsyard/meshes/ERC2022 Marsyard public.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -1.5" />
+      <geometry>
+        <mesh filename="package://marsyard/meshes/ERC2022 Marsyard public.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo> <static>true</static></gazebo>
+</robot>

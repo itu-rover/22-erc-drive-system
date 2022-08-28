@@ -1,0 +1,28 @@
+rover_joint_publisher:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+rover_steering_controller: # Steering position controller
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - steering_leftfront_joint
+    - steering_rightfront_joint
+    - steering_leftrear_joint
+    - steering_rightrear_joint
+
+# 4 of them are for wheel velocity controller
+rover_wheel_leftfront:
+  type: velocity_controllers/JointVelocityController
+  joint: wheel_leftfront_joint
+
+rover_wheel_rightfront:
+  type: velocity_controllers/JointVelocityController
+  joint: wheel_rightfront_joint
+
+rover_wheel_leftrear:
+  type: velocity_controllers/JointVelocityController
+  joint: wheel_leftrear_joint
+
+rover_wheel_rightrear:
+  type: velocity_controllers/JointVelocityController
+  joint: wheel_rightrear_joint

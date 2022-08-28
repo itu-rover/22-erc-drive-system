@@ -1,0 +1,13 @@
+environment: "sim"
+task: "probing"
+start_coordinates: [32.35, 1.85]
+waypoints:
+  WA:
+    goal_1:
+      x: 30.0
+      y: 1.85
+      theta: 0.0
+    goal_2:
+      x: 30.0
+      y: 3.00
+      theta: 0.0

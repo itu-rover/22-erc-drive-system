@@ -1,0 +1,2886 @@
+<xacro:landmark id="1">
+    <pose>-2.60 -5.17 0 0 0 0</pose> <!-- 1.42 -->
+  </xacro:landmark>
+
+  <xacro:landmark id="2">
+    <pose>-6.05 -5.75 0 0 0 1.33</pose> <!-- 1.22 -->
+  </xacro:landmark>
+
+  <xacro:landmark id="3">
+    <pose>-7.93 18.45 0 0 0 0.35</pose> <!-- 1.21-->
+  </xacro:landmark>
+
+  <xacro:landmark id="4">
+    <pose>-0.23 9.19 0 0 0 0.98</pose> <!-- 1.29-->
+  </xacro:landmark>
+
+  <xacro:landmark id="5">
+    <pose>-12.3 -6.28 0 0 0 1.47</pose> <!-- 1.16-->
+  </xacro:landmark>
+
+  <xacro:landmark id="6">
+    <pose>18.46 -1.15 0 0 0 0.83</pose> <!-- 1.28-->
+  </xacro:landmark>
+
+  <xacro:landmark id="7">
+    <pose>13.07 -7.09 0 0 0 1.19</pose> <!-- 1.32-->
+  </xacro:landmark>
+
+  <xacro:landmark id="8">
+    <pose>3.05 17.20 0 0 0 0.95</pose> <!-- 1.19-->
+  </xacro:landmark>
+
+  <xacro:landmark id="9">
+    <pose>-14.82 1.52 0 0 0 0.16</pose> <!-- 1.20-->
+  </xacro:landmark>
+
+  <xacro:landmark id="10">
+    <pose>-10.74 -15.05 0 0 0 1.27</pose> <!-- 1.29-->
+  </xacro:landmark>
+
+  <xacro:landmark id="11">
+    <pose>18.43 5.48 0 0 0 0.23</pose> <!-- 1.36-->
+  </xacro:landmark>
+
+  <xacro:landmark id="12">
+    <pose>-4.14 4.51 0 0 0 0.47</pose> <!-- 1.12-->
+  </xacro:landmark>
+
+  <xacro:landmark id="13">
+    <pose>9.78 5.39 0 0 0 1.13</pose> <!-- 1.35-->
+  </xacro:landmark>
+
+  <xacro:landmark id="15">
+    <pose>15.60 -9.14 0 0 0 1.20</pose> <!-- 1.15-->
+  </xacro:landmark>
+
+
+
+
+
+
+    <model name="landmark3">
+      <pose>-7.93 18.45 0 0 0 0.35</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/3</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/3</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/3</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark4">
+      <pose>-0.23 9.19 0 0 0 0.98</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/4</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/4</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/4</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark5">
+      <pose>-12.3 -6.28 0 0 0 1.47</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/5</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/5</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/5</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark6">
+      <pose>18.46 -1.15 0 0 0 0.83</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/6</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/6</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/6</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark7">
+      <pose>13.07 -7.09 0 0 0 1.19</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/7</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/7</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/7</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark8">
+      <pose>3.05 17.20 0 0 0 0.95</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/8</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/8</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/8</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark9">
+      <pose>-14.82 1.52 0 0 0 0.16</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/9</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/9</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/9</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark10">
+      <pose>-10.74 -15.05 0 0 0 1.27</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/10</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/10</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/10</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark11">
+      <pose>18.43 5.48 0 0 0 0.23</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/11</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/11</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/11</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark12">
+      <pose>-4.14 4.51 0 0 0 0.47</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/12</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/12</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/12</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark13">
+      <pose>9.78 5.39 0 0 0 1.13</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/13</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/13</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/13</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="landmark15">
+      <pose>15.60 -9.14 0 0 0 1.20</pose>
+      <static>true</static>
+      <link name="landmark">
+        <visual name="pole_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <!--${(pole_above_ground - pole_below_ground)/2} -->
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="pole_collision">
+          <pose>0 0 0.1 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <!-- Sign Prism Head-->
+        <visual name="box_visual">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <pose>0 0 0.31 0 0 +1.0471975512</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/kutaygallo/rover_sim/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <!-- Change dictionary line-->
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="sheet1">
+          <pose>0 0.0975 0.46 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/15</name>
+            </script>
+          </material>
+        </visual>
+        <!-- Don'T delete this because Artag 2 needed rectangular prism sign-->
+        <!-- <xacro:landmark_sheet name="sheet2">
+          <pose>0 -${(box_width - sheet_width)/2 + sheet_out} ${pole_above_ground + box_height/2} 0 0 0</pose>
+        </xacro:landmark_sheet> -->
+        <visual name="sheet3">
+          <pose>0.0825 -0.06 0.46 0 0 +1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/15</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="sheet4">
+          <pose>-0.0775 -0.06 0.46 0 0 -1.0471975512</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/15</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+
+
+
+
+
+
+
+    
+    <model name='landmark3'>
+      <pose frame=''>-7.93 18.45 1.21 0 -0 0.35</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/3</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/3</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/3</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark4'>
+      <pose frame=''>-0.23 9.19 1.29 0 -0 0.98</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/4</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/4</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/4</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark5'>
+      <pose frame=''>-12.3 -6.28 1.16 0 -0 1.47</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/5</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/5</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/5</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark6'>
+      <pose frame=''>18.46 -1.15 1.28 0 -0 0.83</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/6</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/6</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/6</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark7'>
+      <pose frame=''>13.07 -7.09 1.32 0 -0 1.19</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/7</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/7</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/7</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark8'>
+      <pose frame=''>3.05 17.2 1.19 0 -0 0.95</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/8</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/8</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/8</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark9'>
+      <pose frame=''>-14.82 1.52 1.2 0 -0 0.16</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/9</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/9</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/9</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark10'>
+      <pose frame=''>-10.74 -15.05 1.29 0 -0 1.27</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/10</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/10</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/10</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark11'>
+      <pose frame=''>18.43 5.48 1.36 0 -0 0.23</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/11</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/11</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/11</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark12'>
+      <pose frame=''>-4.14 4.51 1.12 0 -0 0.47</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/12</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/12</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/12</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark13'>
+      <pose frame=''>9.78 5.39 1.35 0 -0 1.13</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/13</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/13</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/13</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landmark15'>
+      <pose frame=''>15.6 -9.14 1.15 0 -0 1.2</pose>
+      <static>1</static>
+      <link name='landmark'>
+        <visual name='pole_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='pole_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.4</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='box_visual'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <collision name='box_collision'>
+          <pose frame=''>0 0 0.31 0 -0 1.0472</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/sdf/meshes/ERC_Sign.stl</uri>
+              <scale>0.0013 0.0013 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='sheet1'>
+          <pose frame=''>0 0.0975 0.46 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/15</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet3'>
+          <pose frame=''>0.0825 -0.06 0.46 0 -0 1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/15</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='sheet4'>
+          <pose frame=''>-0.0775 -0.06 0.46 0 0 -1.0472</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.005 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>ERC_Landmark/15</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+
+
+
+
+
+
+    <model name='landmark10'>
+        <pose frame=''>-10.74 -15.05 1.29 0 -0 1.27</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>-10.74 -15.05 1.29 0 -0 1.27</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark11'>
+        <pose frame=''>18.43 5.48 1.36 0 -0 0.23</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>18.43 5.48 1.36 0 -0 0.23</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark12'>
+        <pose frame=''>-4.14 4.51 1.12 0 -0 0.47</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>-4.14 4.51 1.12 0 -0 0.47</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark13'>
+        <pose frame=''>9.78 5.39 1.35 0 -0 1.13</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>9.78 5.39 1.35 0 -0 1.13</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark15'>
+        <pose frame=''>15.6 -9.14 1.15 0 -0 1.2</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>15.6 -9.14 1.15 0 -0 1.2</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      
+      <model name='landmark3'>
+        <pose frame=''>-7.93 18.45 1.21 0 -0 0.35</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>-7.93 18.45 1.21 0 -0 0.35</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark4'>
+        <pose frame=''>-0.23 9.19 1.29 0 -0 0.98</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>-0.23 9.19 1.29 0 -0 0.98</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark5'>
+        <pose frame=''>-12.3 -6.28 1.16 0 -0 1.47</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>-12.3 -6.28 1.16 0 -0 1.47</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark6'>
+        <pose frame=''>18.46 -1.15 1.28 0 -0 0.83</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>18.46 -1.15 1.28 0 -0 0.83</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark7'>
+        <pose frame=''>13.07 -7.09 1.32 0 -0 1.19</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>13.07 -7.09 1.32 0 -0 1.19</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark8'>
+        <pose frame=''>3.05 17.2 1.19 0 -0 0.95</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>3.05 17.2 1.19 0 -0 0.95</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landmark9'>
+        <pose frame=''>-14.82 1.52 1.2 0 -0 0.16</pose>
+        <scale>1 1 1</scale>
+        <link name='landmark'>
+          <pose frame=''>-14.82 1.52 1.2 0 -0 0.16</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>

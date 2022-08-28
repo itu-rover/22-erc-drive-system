@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<sdf version="1.6"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <world name="marsyard2021">
+<!-- 
+@author: Baran Berk Bağcı-->
+
+<!-- Empty world with artag, blue sky and clouds.-->
+    <physics type="ode">
+      <ode>
+        <solver>
+          <!-- IMPORTANT for skid steering to properly work -->
+          <friction_model>cone_model</friction_model>
+
+          <island_threads>6</island_threads>
+        </solver>
+      </ode>
+    </physics>
+
+    <light name='sun' type='directional'>
+      <pose frame=''>0 0 100 0 0.8 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <scene>
+      <ambient>0.6 0.6 0.6 1.0</ambient>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <shadows>true</shadows>
+      <origin_visual>true</origin_visual>
+    </scene>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Actors is model with automated moving models in gazebo in this cas our actor is cosmonaut named Lagari Hasan Çelebi.-->
+    <actor name="Lâgari Hasan Çelebi">
+      <link name="cosmonaut">
+        <visual name="visual">
+          <pose>0 25 0.9 0 0 1.57</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/baran/rover_simulation_ws/src/Simulations/blender_gazebo/worlds/cosmonaut-dae/cosmonaut.dae</uri> <!-- Change this path if you want cosmounaut you can use pwd command on terminal.-->
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <script>
+        <loop>true</loop>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="square">
+          <waypoint>
+            <time>0.0</time>
+            <pose>-1 -1 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>30.0</time>
+            <pose>20 -1 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <xacro:include filename="$(find blender_gazebo)/sdf/landmark.sdf.xacro"/>
+
+    <!-- Artag ids from 1 to 15-->
+    <xacro:landmark id="1">
+      <pose>3 4 0 0 0 0</pose> <!-- 1.42 -->
+    </xacro:landmark>
+
+    <xacro:landmark id="2">
+      <pose> 2 5 0 0 1.33</pose> <!-- 1.22 -->
+    </xacro:landmark>
+
+  </world>
+</sdf>
